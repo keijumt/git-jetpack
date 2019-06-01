@@ -1,0 +1,9 @@
+apply from: rootProject.file('android.gradle')
+
+dependencies {
+    implementation dep.kotlin.core
+
+    testImplementation dep.test.junit
+    androidTestImplementation dep.test.testRunner
+    androidTestImplementation dep.test.espressoCore
+}
