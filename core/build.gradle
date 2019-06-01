@@ -1,4 +1,5 @@
 apply from: rootProject.file('android.gradle')
+apply plugin: 'kotlin-kapt'
 
 dependencies {
     implementation dep.kotlin.core
@@ -6,4 +7,7 @@ dependencies {
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
     androidTestImplementation dep.test.espressoCore
+
+    implementation dep.dagger.core
+    kapt dep.dagger.compiler
 }
