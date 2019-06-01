@@ -3,13 +3,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
     defaultConfig {
-        applicationId "keijumt.gitjetpack"
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -21,14 +22,12 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation dep.kotlin.core
-
-    implementation dep.androidX.appCompat
-    implementation dep.androidX.constraint
 
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
     androidTestImplementation dep.test.espressoCore
+
+    implementation dep.androidX.appCompat
+    implementation dep.androidX.constraint
 }
