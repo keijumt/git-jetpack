@@ -1,8 +1,11 @@
 apply from: rootProject.file('android.gradle')
+apply plugin: 'kotlin-kapt'
 android.dataBinding.enabled = true
 
 dependencies {
     implementation dep.kotlin.core
+
+    implementation project(':core')
 
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
@@ -18,4 +21,7 @@ dependencies {
     implementation dep.androidX.ktx.core
     implementation dep.androidX.ktx.fragment
     implementation dep.androidX.ktx.livedata
+
+    implementation dep.dagger.core
+    kapt dep.dagger.compiler
 }

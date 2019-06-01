@@ -10,4 +10,6 @@ dependencies {
 
     implementation dep.dagger.core
     kapt dep.dagger.compiler
+
+    implementation dep.androidX.lifecycle.viewmodel
 }
