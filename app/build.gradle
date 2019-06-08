@@ -21,12 +21,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation dep.kotlin.core
 
     implementation project(':core')
+    implementation project(':feature:feed')
+    implementation project(':feature:profile')
 
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
@@ -42,4 +47,6 @@ dependencies {
     implementation dep.navigation.fragmentKtx
     implementation dep.navigation.ui
     implementation dep.navigation.uiKtx
+
+    implementation dep.material
 }

@@ -8,7 +8,7 @@ ext {
     lifecycleVersion = "2.2.0-alpha01"
     ktxVersion = '1.1.0-alpha05'
     livedataKtxVersion = "2.1.0-alpha04"
-    navigationVersion = "2.1.0-alpha03"
+    navigationVersion = "2.1.0-alpha05"
     daggerVersion = "2.23.1"
     junitVersion = '4.12'
     testRunnerVersion = '1.1.1'

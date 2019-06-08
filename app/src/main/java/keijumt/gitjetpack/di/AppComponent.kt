@@ -1,7 +1,7 @@
 package keijumt.gitjetpack.di
 
 import dagger.Component
-import keijumt.gitjetpack.AppActivity
+import keijumt.gitjetpack.MainActivity
 import keijumt.gitjetpack.core.di.CoreComponent
 import keijumt.gitjetpack.core.di.ModuleScope
 
@@ -21,5 +21,5 @@ interface AppComponent {
         fun coreComponent(coreComponent: CoreComponent): Builder
     }
 
-    fun inject(activity: AppActivity)
+    fun inject(activity: MainActivity)
 }
