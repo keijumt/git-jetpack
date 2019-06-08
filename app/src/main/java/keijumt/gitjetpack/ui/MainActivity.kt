@@ -1,4 +1,4 @@
-package keijumt.gitjetpack
+package keijumt.gitjetpack.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import keijumt.gitjetpack.App
+import keijumt.gitjetpack.R
 import keijumt.gitjetpack.databinding.ActivityMainBinding
 import keijumt.gitjetpack.di.DaggerAppComponent
 
@@ -24,8 +26,10 @@ class MainActivity : AppCompatActivity() {
             .inject(this)
 
         super.onCreate(savedInstanceState)
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
+            R.layout.activity_main
+        )
+
         binding.bottomNavigation.setupWithNavController(navController)
     }
 

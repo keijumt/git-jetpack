@@ -1,7 +1,7 @@
 package keijumt.gitjetpack.di
 
 import dagger.Component
-import keijumt.gitjetpack.MainActivity
+import keijumt.gitjetpack.ui.MainActivity
 import keijumt.gitjetpack.core.di.CoreComponent
 import keijumt.gitjetpack.core.di.ModuleScope
 
