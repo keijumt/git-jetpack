@@ -1,5 +1,6 @@
 apply from: rootProject.file('android.gradle')
 apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
 
 dependencies {
     implementation dep.kotlin.core
@@ -12,4 +13,9 @@ dependencies {
     kapt dep.dagger.compiler
 
     implementation dep.androidX.lifecycle.viewmodel
+
+    implementation dep.navigation.fragment
+    implementation dep.navigation.fragmentKtx
+    implementation dep.navigation.ui
+    implementation dep.navigation.uiKtx
 }

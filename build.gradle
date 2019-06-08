@@ -27,6 +27,7 @@ buildscript {
     dependencies {
         classpath dep.plugin.android
         classpath dep.plugin.kotlin
+        classpath dep.plugin.safeArgs
     }
 }
 

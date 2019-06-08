@@ -8,6 +8,7 @@ ext {
     lifecycleVersion = "2.2.0-alpha01"
     ktxVersion = '1.1.0-alpha05'
     livedataKtxVersion = "2.1.0-alpha04"
+    navigationVersion = "2.1.0-alpha03"
     daggerVersion = "2.23.1"
     junitVersion = '4.12'
     testRunnerVersion = '1.1.1'
@@ -15,16 +16,17 @@ ext {
 }
 
 ext.dep = [
-        plugin  : [
-                android: "com.android.tools.build:gradle:$buildGradleVersion",
-                kotlin : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        plugin    : [
+                android : "com.android.tools.build:gradle:$buildGradleVersion",
+                kotlin  : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion",
+                safeArgs: "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         ],
 
-        kotlin  : [
+        kotlin    : [
                 core: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
         ],
 
-        androidX: [
+        androidX  : [
                 appCompat   : "androidx.appcompat:appcompat:$appcompatVersion",
                 recyclerView: "androidx.recyclerview:recyclerview:$recyclerViewVersion",
                 constraint  : "androidx.constraintlayout:constraintlayout:$constraintVersion",
@@ -40,16 +42,23 @@ ext.dep = [
                 ]
         ],
 
-        test    : [
+        test      : [
                 junit       : "junit:junit:$junitVersion",
                 testRunner  : "androidx.test:runner:$testRunnerVersion",
                 espressoCore: "androidx.test.espresso:espresso-core:$espressoVersion",
         ],
 
-        dagger  : [
+        navigation: [
+                fragment   : "androidx.navigation:navigation-fragment:$navigationVersion",
+                ui         : "androidx.navigation:navigation-ui:$navigationVersion",
+                fragmentKtx: "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+                uiKtx      : "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+        ],
+
+        dagger    : [
                 core    : "com.google.dagger:dagger:$daggerVersion",
                 compiler: "com.google.dagger:dagger-compiler:$daggerVersion",
         ],
 
-        material: "com.google.android.material:material:$materialVersion"
+        material  : "com.google.android.material:material:$materialVersion"
 ]
