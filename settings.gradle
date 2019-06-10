@@ -1,1 +1,1 @@
-include ':app', ':core', ':feature:feed', ':feature:profile'
+include ':app', ':core', ':component', ':feature:feed', ':feature:profile'
