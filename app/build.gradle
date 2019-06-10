@@ -48,5 +48,9 @@ dependencies {
     implementation dep.navigation.ui
     implementation dep.navigation.uiKtx
 
+    implementation dep.androidX.ktx.core
+    implementation dep.androidX.ktx.fragment
+    implementation dep.androidX.ktx.livedata
+
     implementation dep.material
 }
