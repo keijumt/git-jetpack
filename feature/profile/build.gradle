@@ -7,6 +7,7 @@ dependencies {
     implementation dep.kotlin.core
 
     implementation project(':core')
+    implementation project(':component')
 
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner

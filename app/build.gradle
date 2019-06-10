@@ -30,6 +30,7 @@ dependencies {
     implementation dep.kotlin.core
 
     implementation project(':core')
+    implementation project(':component')
     implementation project(':feature:feed')
     implementation project(':feature:profile')
 
