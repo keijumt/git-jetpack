@@ -8,14 +8,12 @@ dependencies {
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
     androidTestImplementation dep.test.espressoCore
-
+    
     implementation dep.dagger.core
+    implementation dep.dagger.android
+    implementation dep.dagger.androidSupport
     kapt dep.dagger.compiler
-
-    implementation dep.androidX.lifecycle.viewmodel
-
-    implementation dep.navigation.fragment
-    implementation dep.navigation.fragmentKtx
-    implementation dep.navigation.ui
-    implementation dep.navigation.uiKtx
+    kapt dep.dagger.androidProcessor
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
 }

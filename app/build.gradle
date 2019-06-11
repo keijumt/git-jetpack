@@ -29,7 +29,7 @@ android {
 dependencies {
     implementation dep.kotlin.core
 
-    implementation project(':core')
+    implementation project(':common')
     implementation project(':component')
     implementation project(':feature:feed')
     implementation project(':feature:profile')
@@ -42,7 +42,10 @@ dependencies {
     implementation dep.androidX.constraint
 
     implementation dep.dagger.core
+    implementation dep.dagger.android
+    implementation dep.dagger.androidSupport
     kapt dep.dagger.compiler
+    kapt dep.dagger.androidProcessor
 
     implementation dep.navigation.fragment
     implementation dep.navigation.fragmentKtx

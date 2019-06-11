@@ -4,8 +4,6 @@ apply plugin: 'kotlin-kapt'
 dependencies {
     implementation dep.kotlin.core
 
-    implementation project(':core')
-
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
 
@@ -16,5 +14,8 @@ dependencies {
     implementation dep.androidX.ktx.livedata
 
     implementation dep.dagger.core
+    implementation dep.dagger.android
+    implementation dep.dagger.androidSupport
     kapt dep.dagger.compiler
+    kapt dep.dagger.androidProcessor
 }

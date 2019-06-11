@@ -58,8 +58,11 @@ ext.dep = [
         ],
 
         dagger    : [
-                core    : "com.google.dagger:dagger:$daggerVersion",
-                compiler: "com.google.dagger:dagger-compiler:$daggerVersion",
+                core            : "com.google.dagger:dagger:$daggerVersion",
+                compiler        : "com.google.dagger:dagger-compiler:$daggerVersion",
+                android         : "com.google.dagger:dagger-android:$daggerVersion",
+                androidSupport  : "com.google.dagger:dagger-android-support:$daggerVersion",
+                androidProcessor: "com.google.dagger:dagger-android-processor:$daggerVersion"
         ],
 
         retrofit  : [

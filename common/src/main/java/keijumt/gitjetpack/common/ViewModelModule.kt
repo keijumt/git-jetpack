@@ -1,4 +1,4 @@
-package keijumt.gitjetpack.core.di
+package keijumt.gitjetpack.common
 
 import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
@@ -7,5 +7,5 @@ import dagger.Module
 @Module
 abstract class ViewModelModule {
     @Binds
-    abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
+    internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 }

@@ -1,4 +1,4 @@
-package keijumt.gitjetpack.core.di
+package keijumt.gitjetpack.common
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

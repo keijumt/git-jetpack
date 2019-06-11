@@ -5,8 +5,6 @@ android.dataBinding.enabled = true
 dependencies {
     implementation dep.kotlin.core
 
-    implementation project(':core')
-
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
     androidTestImplementation dep.test.espressoCore

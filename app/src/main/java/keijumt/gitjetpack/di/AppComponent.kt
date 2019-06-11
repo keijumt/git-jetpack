@@ -1,25 +1,35 @@
 package keijumt.gitjetpack.di
 
+import android.app.Application
+import dagger.BindsInstance
 import dagger.Component
-import keijumt.gitjetpack.ui.MainActivity
-import keijumt.gitjetpack.core.di.CoreComponent
-import keijumt.gitjetpack.core.di.ModuleScope
+import dagger.android.AndroidInjectionModule
+import dagger.android.AndroidInjector
+import keijumt.gitjetpack.App
+import keijumt.gitjetpack.common.ViewModelModule
+import javax.inject.Singleton
 
-@ModuleScope
+@Singleton
 @Component(
     modules = [
-        AppModule::class
-    ],
-    dependencies = [
-        CoreComponent::class
+        AndroidInjectionModule::class,
+        AppModule::class,
+        ActivityBindingModule::class,
+        ViewModelModule::class
     ]
 )
-interface AppComponent {
+interface AppComponent : AndroidInjector<App> {
     @Component.Builder
     interface Builder {
+        @BindsInstance
+        fun application(application: Application): Builder
+
         fun build(): AppComponent
-        fun coreComponent(coreComponent: CoreComponent): Builder
     }
 
-    fun inject(activity: MainActivity)
+    override fun inject(app: App)
 }
+
+fun Application.createAppComponent() = DaggerAppComponent.builder()
+    .application(this)
+    .build()
