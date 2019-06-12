@@ -2,6 +2,7 @@ include ':app',
         ':common',
         ':component',
         ':data',
+        ':model',
 
         ':feature:feed',
         ':feature:profile'

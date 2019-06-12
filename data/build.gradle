@@ -4,6 +4,8 @@ apply plugin: 'kotlin-kapt'
 dependencies {
     implementation dep.kotlin.core
 
+    implementation project(':model')
+
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
 
