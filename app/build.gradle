@@ -15,14 +15,21 @@ android {
         versionName rootProject.ext.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     dataBinding {
         enabled = true
+    }
+    
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
     }
 }
 
@@ -31,6 +38,7 @@ dependencies {
 
     implementation project(':common')
     implementation project(':component')
+    implementation project(':data')
     implementation project(':feature:feed')
     implementation project(':feature:profile')
 
@@ -57,4 +65,8 @@ dependencies {
     implementation dep.androidX.ktx.livedata
 
     implementation dep.material
+
+    implementation dep.retrofit.core
+    implementation dep.retrofit.gsonConverter
+    implementation dep.okHttp
 }

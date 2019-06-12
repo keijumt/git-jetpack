@@ -7,6 +7,8 @@ import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import keijumt.gitjetpack.App
 import keijumt.gitjetpack.common.ViewModelModule
+import keijumt.gitjetpack.data.di.ApiModule
+import keijumt.gitjetpack.data.di.DataModule
 import javax.inject.Singleton
 
 @Singleton
@@ -15,7 +17,9 @@ import javax.inject.Singleton
         AndroidInjectionModule::class,
         AppModule::class,
         ActivityBindingModule::class,
-        ViewModelModule::class
+        ViewModelModule::class,
+        DataModule::class,
+        ApiModule::class
     ]
 )
 interface AppComponent : AndroidInjector<App> {

@@ -18,4 +18,8 @@ dependencies {
     implementation dep.dagger.androidSupport
     kapt dep.dagger.compiler
     kapt dep.dagger.androidProcessor
+
+    implementation dep.retrofit.core
+    implementation dep.retrofit.gsonConverter
+    implementation dep.okHttp
 }
