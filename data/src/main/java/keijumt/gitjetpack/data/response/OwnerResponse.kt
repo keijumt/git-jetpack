@@ -6,5 +6,7 @@ data class OwnerResponse(
     @SerializedName("login")
     val login: String,
     @SerializedName("url")
-    val url: String?
+    val url: String?,
+    @SerializedName("avatar_url")
+    val avatarUrl: String
 )

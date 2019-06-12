@@ -1,6 +1,8 @@
 apply from: rootProject.file('android.gradle')
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 android.dataBinding.enabled = true
 
 dependencies {
@@ -9,7 +11,11 @@ dependencies {
     implementation project(':common')
     implementation project(':component')
     implementation project(':data')
+    implementation project(':model')
 
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
     androidTestImplementation dep.test.espressoCore

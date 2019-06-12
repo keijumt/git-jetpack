@@ -21,6 +21,7 @@ fun List<RepoResponse>.toRepos(): List<Repo> {
 fun OwnerResponse.toOwner(): Owner {
     return Owner(
         login = login,
-        url = url
+        url = url,
+        avatarUrl = avatarUrl
     )
 }

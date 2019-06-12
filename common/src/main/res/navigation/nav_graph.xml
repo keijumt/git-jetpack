@@ -12,6 +12,16 @@
         tools:layout="@layout/fragment_feeds" />
 
     <fragment
+        android:id="@+id/feed"
+        android:name="keijumt.gitjetpack.feed.ui.FeedFragment"
+        android:label="feedFragment"
+        tools:layout="@layout/fragment_feed">
+        <argument
+            android:name="tabIndex"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
         android:id="@+id/profile"
         android:name="keijumt.gitjetpack.profile.ui.ProfileFragment"
         android:label="profileFragment"

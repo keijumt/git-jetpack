@@ -20,5 +20,8 @@ dependencies {
     implementation dep.androidX.ktx.fragment
     implementation dep.androidX.ktx.livedata
 
+    implementation dep.glide.core
+    kapt dep.glide.compiler
+
     implementation dep.material
 }
