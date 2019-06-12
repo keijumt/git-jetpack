@@ -9,6 +9,7 @@ import keijumt.gitjetpack.App
 import keijumt.gitjetpack.common.ViewModelModule
 import keijumt.gitjetpack.data.di.ApiModule
 import keijumt.gitjetpack.data.di.DataModule
+import keijumt.gitjetpack.data.di.RepositoryModule
 import javax.inject.Singleton
 
 @Singleton
@@ -19,7 +20,8 @@ import javax.inject.Singleton
         ActivityBindingModule::class,
         ViewModelModule::class,
         DataModule::class,
-        ApiModule::class
+        ApiModule::class,
+        RepositoryModule::class
     ]
 )
 interface AppComponent : AndroidInjector<App> {
