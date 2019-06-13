@@ -14,35 +14,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?colorSurface">
-
-        <ImageView
-            android:id="@+id/owner_thumbnail"
-            android:layout_width="@dimen/repo_thumbnail_size"
-            android:layout_height="@dimen/repo_thumbnail_size"
-            android:layout_marginStart="@dimen/spacing_12dp"
-            android:layout_marginTop="@dimen/spacing_12dp"
-            android:layout_marginBottom="@dimen/spacing_12dp"
-            app:imageUrl="@{repo.owner.avatarUrl}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="2,1:1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:background="@android:color/black" />
+        android:background="?colorSurface"
+        android:padding="@dimen/spacing_12dp">
 
         <TextView
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_8dp"
-            android:layout_marginEnd="@dimen/spacing_12dp"
             android:ellipsize="end"
             android:lines="1"
             android:text="@{repo.name}"
             android:textColor="?attr/colorOnSurface"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/owner_thumbnail"
-            app:layout_constraintTop_toTopOf="@id/owner_thumbnail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Kotlin" />
 
         <TextView
@@ -50,7 +35,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_8dp"
-            android:layout_marginEnd="@dimen/spacing_12dp"
             android:ellipsize="end"
             android:lines="1"
             android:text="@{repo.description}"
@@ -60,5 +44,31 @@
             app:layout_constraintTop_toBottomOf="@id/name"
             tools:text="The Kotlin Programming Language" />
 
+        <ImageView
+            android:id="@+id/owner_thumbnail"
+            android:layout_width="@dimen/repo_thumbnail_size"
+            android:layout_height="@dimen/repo_thumbnail_size"
+            android:layout_marginTop="@dimen/spacing_12dp"
+            app:imageUrl="@{repo.owner.avatarUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="2,1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            tools:background="@android:color/black" />
+
+        <TextView
+            android:id="@+id/owner_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_8dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{repo.owner.login}"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintBottom_toBottomOf="@id/owner_thumbnail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/owner_thumbnail"
+            app:layout_constraintTop_toTopOf="@id/owner_thumbnail"
+            tools:text="Jetbrains" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
