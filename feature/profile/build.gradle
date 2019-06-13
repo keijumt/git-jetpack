@@ -6,7 +6,7 @@ android.dataBinding.enabled = true
 dependencies {
     implementation dep.kotlin.core
 
-    implementation project(':common')
+    implementation project(':coreandroid')
     implementation project(':component')
 
     testImplementation dep.test.junit

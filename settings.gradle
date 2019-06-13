@@ -1,5 +1,5 @@
 include ':app',
-        ':common',
+        ':coreandroid',
         ':component',
         ':data',
         ':model',

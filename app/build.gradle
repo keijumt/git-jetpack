@@ -36,7 +36,7 @@ android {
 dependencies {
     implementation dep.kotlin.core
 
-    implementation project(':common')
+    implementation project(':coreandroid')
     implementation project(':component')
     implementation project(':data')
     implementation project(':feature:feed')
