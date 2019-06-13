@@ -1,1 +1,44 @@
 # git-jetpack
+This is a sample app for browsing github using jetpack.
+
+## technology stack
+- [Kotlin](https://github.com/JetBrains/kotlin)
+- [Jetpack](https://developer.android.com/jetpack)
+- Modularization
+- SingleActivity
+- [MVVM](https://developer.android.com/jetpack/docs/guide)
+- [Kotlin Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
+- [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle)
+- [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
+- [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
+- [DataBinding](https://developer.android.com/topic/libraries/data-binding)
+- [Navigation](https://developer.android.com/topic/libraries/architecture/navigation.html)
+- [KTX](https://developer.android.com/kotlin/ktx.html)
+- [Dagger2](https://github.com/google/dagger)
+- [Retrofit](https://github.com/square/retrofit)
+
+## Modularization
+<img src="art/modularization.png" width="400" />
+
+- app
+  - There are MainActivity class and Application class.
+  - The app module injects dependencies into each module.
+  - It holds AppComopnent and refers to Dagger's Module defined in each module.
+- feature
+  - It is a module for each feature.
+  - There are Fragment, ViewModel and Adapter related to feature.
+- component
+  - There are custom views and resources.
+  - BindingAdapter is also defined here.
+- data
+  - There are classes related to repository and api.
+- model
+  - There is business logic and Entity.
+- coreandroid
+  - There is a class used for each feature.
+  - There are ViewModelFactory and Dagger's ViewModel scope.
+  - If circular reference occurs in each feature module, place an interface in this module and inject dependencies from the app to solve it.
+
+### TODO
+- Linkage of Navigation and BottomNavigationView
+  - Fragment is regenerated each time you switch items

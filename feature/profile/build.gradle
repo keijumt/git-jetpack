@@ -8,6 +8,7 @@ dependencies {
 
     implementation project(':coreandroid')
     implementation project(':component')
+    implementation project(':model')
 
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
