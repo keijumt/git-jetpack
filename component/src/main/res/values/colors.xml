@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Theme -->
-    <color name="colorPrimary">#9C27B0</color>
-    <color name="colorOnPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#7B1FA2</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#29b6f6</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorPrimaryDark">#0086c3</color>
+    <color name="colorAccent">#ff4081</color>
     <color name="colorBackground">@color/white</color>
     <color name="colorOnBackground">@color/black</color>
     <color name="colorSurface">@color/white</color>
@@ -17,6 +17,10 @@
 
     <!-- Component -->
     <color name="status_bar">@color/white</color>
+
+    <color name="cell_background">@color/white</color>
+    <color name="cell_on_background">@color/black</color>
+
     <color name="bottom_navigation_checked">@color/colorPrimary</color>
     <color name="bottom_navigation_unchecked">@color/gray</color>
     <color name="bottom_navigation_pressed">@color/colorPrimary</color>

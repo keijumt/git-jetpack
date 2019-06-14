@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme -->
+    <color name="colorPrimary">#81d4fa</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorPrimaryDark">#4ba3c7</color>
+    <color name="colorAccent">#ff80ab</color>
+    <color name="colorBackground">@color/black</color>
+    <color name="colorOnBackground">@color/white</color>
+    <color name="colorSurface">@color/black</color>
+    <color name="colorOnSurface">@color/white</color>
+
+    <!-- Color -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#121212</color>
+    <color name="gray">#BDBDBD</color>
+
+    <!-- Component -->
+    <color name="status_bar">@android:color/transparent</color>
+
+    <color name="cell_background">@color/black</color>
+    <color name="cell_on_background">@color/white</color>
+
+    <color name="bottom_navigation_checked">@color/colorPrimary</color>
+    <color name="bottom_navigation_unchecked">@color/gray</color>
+    <color name="bottom_navigation_pressed">@color/colorPrimary</color>
+</resources>

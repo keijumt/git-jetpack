@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="Platform.AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar" />
+    <style name="Platform.AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
 
     <style name="AppTheme" parent="Platform.AppTheme">
         <!-- Colors -->
@@ -13,6 +13,8 @@
         <item name="colorOnBackground">@color/colorOnBackground</item>
         <item name="colorSurface">@color/colorSurface</item>
         <item name="colorOnSurface">@color/colorOnSurface</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
 </resources>

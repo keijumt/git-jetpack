@@ -14,35 +14,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?colorSurface"
+        android:background="@color/cell_background"
         android:padding="@dimen/spacing_12dp">
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:lines="1"
-            android:text="@{repo.name}"
-            android:textColor="?attr/colorOnSurface"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Kotlin" />
-
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_8dp"
-            android:ellipsize="end"
-            android:lines="1"
-            android:text="@{repo.description}"
-            android:textColor="?attr/colorOnSurface"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/name"
-            app:layout_constraintTop_toBottomOf="@id/name"
-            tools:text="The Kotlin Programming Language" />
 
         <ImageView
             android:id="@+id/owner_thumbnail"
@@ -54,7 +27,34 @@
             app:layout_constraintDimensionRatio="2,1:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/description"
-            tools:background="@android:color/black" />
+            tools:background="@android:color/white" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_8dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{repo.description}"
+            android:textColor="@color/cell_on_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="The Kotlin Programming Language" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{repo.name}"
+            android:textColor="@color/cell_on_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Kotlin" />
 
         <TextView
             android:id="@+id/owner_name"
@@ -64,7 +64,7 @@
             android:ellipsize="end"
             android:lines="1"
             android:text="@{repo.owner.login}"
-            android:textColor="?attr/colorOnSurface"
+            android:textColor="@color/cell_on_background"
             app:layout_constraintBottom_toBottomOf="@id/owner_thumbnail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/owner_thumbnail"
