@@ -16,6 +16,7 @@
     <color name="gray">#BDBDBD</color>
 
     <!-- Component -->
+    <color name="status_bar">@color/white</color>
     <color name="bottom_navigation_checked">@color/colorPrimary</color>
     <color name="bottom_navigation_unchecked">@color/gray</color>
     <color name="bottom_navigation_pressed">@color/colorPrimary</color>
