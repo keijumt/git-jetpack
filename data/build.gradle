@@ -1,6 +1,14 @@
 apply from: rootProject.file('android.gradle')
 apply plugin: 'kotlin-kapt'
 
+android {
+    defaultConfig {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        buildConfigField("String", "API_TOKEN", "\"${properties.getProperty("api_token")}\"")
+    }
+}
+
 dependencies {
     implementation dep.kotlin.core
 

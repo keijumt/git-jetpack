@@ -3,6 +3,7 @@ package keijumt.gitjetpack.data.di
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
+import keijumt.gitjetpack.data.api.AuthInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -11,7 +12,10 @@ import javax.inject.Singleton
 class DataModule {
 
     @Provides
-    fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder().build()
+    fun provideOkHttpClient(): OkHttpClient = OkHttpClient
+        .Builder()
+        .addInterceptor(AuthInterceptor())
+        .build()
 
     @Provides
     @Singleton
