@@ -1,4 +1,4 @@
-package keijumt.gitjetpack.profile
+package keijumt.gitjetpack.developer
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

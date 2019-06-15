@@ -1,4 +1,4 @@
-package keijumt.gitjetpack.profile
+package keijumt.gitjetpack.developer
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

@@ -22,9 +22,9 @@
     </fragment>
 
     <fragment
-        android:id="@+id/profile"
-        android:name="keijumt.gitjetpack.profile.ui.ProfileFragment"
-        android:label="profileFragment"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/developers"
+        android:name="keijumt.gitjetpack.developer.ui.DevelopersFragment"
+        android:label="developersFragment"
+        tools:layout="@layout/fragment_developers" />
 
 </navigation>

@@ -1,4 +1,4 @@
-package keijumt.gitjetpack.profile.ui
+package keijumt.gitjetpack.developer.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import dagger.android.support.DaggerFragment
-import keijumt.gitjetpack.profile.databinding.FragmentProfileBinding
+import keijumt.gitjetpack.developer.databinding.FragmentDevelopersBinding
 import javax.inject.Inject
 
-class ProfileFragment : DaggerFragment() {
+class DevelopersFragment : DaggerFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -20,12 +20,12 @@ class ProfileFragment : DaggerFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentProfileBinding.inflate(
+        val binding = FragmentDevelopersBinding.inflate(
             inflater,
             container,
             false
         )
-        val profileViewModel = ViewModelProviders.of(this, viewModelFactory).get(ProfileViewModel::class.java)
+        val developersViewModel = ViewModelProviders.of(this, viewModelFactory).get(DevelopersViewModel::class.java)
         return binding.root
     }
 }
