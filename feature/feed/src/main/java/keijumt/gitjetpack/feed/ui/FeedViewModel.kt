@@ -36,7 +36,7 @@ class FeedViewModel @Inject constructor(
         _isVisibleProgress.value = true
 
         withContext(Dispatchers.IO) {
-            val result = repoRepository.search(searchWord)
+            val result = repoRepository.searchByRepoName(searchWord)
 
             if (result.isError()) {
                 // TODO エラーハンドリング
