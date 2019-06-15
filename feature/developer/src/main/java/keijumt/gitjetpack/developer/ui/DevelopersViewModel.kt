@@ -23,6 +23,15 @@ class DevelopersViewModel @Inject constructor(
     private val _owner = MutableLiveData<List<Owner>>()
     val owner: LiveData<List<Owner>> = _owner
 
+    init {
+        loadUsers("a")
+    }
+
+    fun onQueryTextSubmit(query: String): Boolean {
+        loadUsers(query)
+        return false
+    }
+
     fun loadUsers(searchWord: String) = viewModelScope.launch {
         _isVisibleProgress.value = true
 
@@ -38,12 +47,5 @@ class DevelopersViewModel @Inject constructor(
         }
 
         _isVisibleProgress.value = false
-    }
-
-    init {
-        viewModelScope.launch {
-            val hoge = userRepository.search("keijumt")
-            println("hoge size is ${hoge.toSuccess().data.size}")
-        }
     }
 }
