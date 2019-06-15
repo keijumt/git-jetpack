@@ -63,7 +63,7 @@
             android:layout_marginStart="@dimen/spacing_8dp"
             android:ellipsize="end"
             android:lines="1"
-            android:text="@{repo.owner.login}"
+            android:text="@{repo.owner.userId}"
             android:textColor="@color/cell_on_background"
             app:layout_constraintBottom_toBottomOf="@id/owner_thumbnail"
             app:layout_constraintEnd_toEndOf="parent"

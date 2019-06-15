@@ -9,12 +9,18 @@
         <variable
             name="owner"
             type="keijumt.gitjetpack.model.Owner" />
+
+        <variable
+            name="listener"
+            type="keijumt.gitjetpack.developer.ui.DeveloperAdapterListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/cell_background"
+        android:foreground="?attr/selectableItemBackground"
+        android:onClick="@{() -> listener.onClickItem(owner.userId)}"
         android:padding="@dimen/spacing_12dp">
 
         <ImageView
@@ -34,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_8dp"
             android:layout_marginTop="@dimen/spacing_4dp"
-            android:text="@{owner.login}"
+            android:text="@{owner.userId}"
             android:textColor="@color/cell_on_background"
             app:layout_constraintStart_toEndOf="@id/thumbnail"
             app:layout_constraintTop_toTopOf="@id/thumbnail"

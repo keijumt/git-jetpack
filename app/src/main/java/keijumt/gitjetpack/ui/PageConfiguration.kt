@@ -1,6 +1,7 @@
 package keijumt.gitjetpack.ui
 
 import androidx.annotation.IdRes
+import keijumt.gitjetpack.R
 
 enum class PageConfiguration(
     val id: Int,
@@ -10,6 +11,7 @@ enum class PageConfiguration(
     val hideBottomNavigation: Boolean = false
 ) {
 
+    DeveloperDetail(R.id.developerdetail, displayHomeAsUpEnabled = true, hideBottomNavigation = true),
     OTHER(0);
 
     companion object {

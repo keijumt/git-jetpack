@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import dagger.android.support.DaggerFragment
 import keijumt.gitjetpack.developerdetail.databinding.FragmentDeveloperDetailBinding
 import javax.inject.Inject
@@ -31,6 +32,8 @@ class DeveloperDetailFragment : DaggerFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val viewModel: DeveloperDetailViewModel by viewModels { viewModelFactory }
+
+        val args: DeveloperDetailFragmentArgs by navArgs()
     }
 
 }

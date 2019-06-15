@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
 import dagger.android.support.DaggerFragment
 import keijumt.gitjetpack.developer.databinding.FragmentDevelopersBinding
 import javax.inject.Inject
@@ -39,13 +40,16 @@ class DevelopersFragment : DaggerFragment() {
         val developersViewModel: DevelopersViewModel by viewModels { viewModelFactory }
         binding.viewModel = developersViewModel
 
-        val adapter = DeveloperAdapter()
+        val adapter = DeveloperAdapter(developersViewModel)
         binding.recyclerDeveloper.adapter = adapter
+
+        developersViewModel.navigateToDeveloperDetail.observe(viewLifecycleOwner) { userId ->
+            val action = DevelopersFragmentDirections.actionDevelopersToDeveloperdetail(userId)
+            findNavController().navigate(action)
+        }
 
         developersViewModel.owner.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
-
-        developersViewModel.loadUsers("a")
     }
 }

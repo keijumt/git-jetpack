@@ -6,7 +6,7 @@ import keijumt.gitjetpack.model.Owner
 fun List<OwnerResponse>.toOwners(): List<Owner> {
     return map {
         Owner(
-            login = it.login,
+            userId = it.userId,
             url = it.url,
             avatarUrl = it.avatarUrl
         )
