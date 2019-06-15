@@ -8,7 +8,19 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="feeds">
+                  <entry key="developers">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="256" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="feed">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
@@ -20,12 +32,12 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="profile">
+                  <entry key="feeds">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="256" />
+                            <option name="x" value="12" />
                             <option name="y" value="12" />
                           </Point>
                         </option>

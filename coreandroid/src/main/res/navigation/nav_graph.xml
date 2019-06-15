@@ -27,4 +27,10 @@
         android:label="developersFragment"
         tools:layout="@layout/fragment_developers" />
 
+    <fragment
+        android:id="@+id/developerdetail"
+        android:name="keijumt.gitjetpack.developerdetail.ui.DeveloperDetailFragment"
+        android:label="developersFragment"
+        tools:layout="@layout/fragment_developer_detail" />
+
 </navigation>

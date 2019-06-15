@@ -41,6 +41,7 @@ dependencies {
     implementation project(':data')
     implementation project(':feature:feed')
     implementation project(':feature:developer')
+    implementation project(':feature:developerdetail')
 
     testImplementation dep.test.junit
     androidTestImplementation dep.test.testRunner
