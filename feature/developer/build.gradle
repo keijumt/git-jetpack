@@ -8,6 +8,7 @@ dependencies {
 
     implementation project(':coreandroid')
     implementation project(':component')
+    implementation project(':data')
     implementation project(':model')
 
     testImplementation dep.test.junit
@@ -30,6 +31,11 @@ dependencies {
     implementation dep.dagger.androidSupport
     kapt dep.dagger.compiler
     kapt dep.dagger.androidProcessor
+
+    implementation dep.navigation.fragment
+    implementation dep.navigation.fragmentKtx
+    implementation dep.navigation.ui
+    implementation dep.navigation.uiKtx
 
     implementation dep.material
 }
