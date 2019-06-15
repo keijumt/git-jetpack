@@ -56,8 +56,5 @@ class FeedFragment : DaggerFragment() {
         feedViewModel.repos.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
-
-        // TODO ViewPagerで実装した後にsafeArgsで受け取る
-        feedViewModel.loadRepo("Kotlin")
     }
 }

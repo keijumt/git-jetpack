@@ -23,6 +23,15 @@ class FeedViewModel @Inject constructor(
     private val _repos = MutableLiveData<List<Repo>>()
     val repos: LiveData<List<Repo>> = _repos
 
+    init {
+        loadRepo("Kotlin")
+    }
+
+    fun onQueryTextSubmit(query: String): Boolean {
+        loadRepo(query)
+        return false
+    }
+
     fun loadRepo(searchWord: String) = viewModelScope.launch {
         _isVisibleProgress.value = true
 
