@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/feeds"
         android:name="keijumt.gitjetpack.feed.ui.FeedsFragment"
-        android:label="feedsFragment"
+        android:label="feed"
         tools:layout="@layout/fragment_feeds" />
 
     <fragment
         android:id="@+id/feed"
-        android:name="keijumt.gitjetpack.feed.ui.FeedFragment"
+        android:name="keijumt.gitjetpacfk.feed.ui.FeedFragment"
         android:label="feedFragment"
         tools:layout="@layout/fragment_feed">
         <argument
@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/developers"
         android:name="keijumt.gitjetpack.developer.ui.DevelopersFragment"
-        android:label="developersFragment"
+        android:label="developer"
         tools:layout="@layout/fragment_developers">
         <action
             android:id="@+id/action_developers_to_developerdetail"

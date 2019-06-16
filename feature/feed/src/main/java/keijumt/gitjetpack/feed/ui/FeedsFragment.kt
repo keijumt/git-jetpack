@@ -8,6 +8,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import dagger.android.support.DaggerFragment
+import keijumt.gitjetpacfk.feed.ui.FeedFragmentArgs
 import keijumt.gitjetpack.feed.R
 import keijumt.gitjetpack.feed.databinding.FragmentFeedsBinding
 import javax.inject.Inject
