@@ -39,7 +39,7 @@ class ReposViewModel @Inject constructor(
             val result = repoRepository.searchByRepoName(searchWord)
 
             if (result.isError()) {
-                // TODO エラーハンドリング
+                // TODO ErrorHandling
                 return@withContext
             }
 
