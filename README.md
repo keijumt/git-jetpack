@@ -32,7 +32,7 @@ api_token=xxxxxxxxxxxx
 | <img src="art/day.png" width="320" /> | <img src="art/night.png" width="320" /> |
 
 ## Modularization
-<img src="art/modularization.png" width="400" />
+<img src="art/modularization.png" width="720" />
 
 - app
   - There are MainActivity class and Application class.
