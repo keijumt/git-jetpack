@@ -27,7 +27,7 @@
             android:id="@+id/thumbnail"
             android:layout_width="@dimen/developer_thumbnail_size"
             android:layout_height="@dimen/developer_thumbnail_size"
-            app:clipToCircle="@{true}"
+            app:circleCrop="@{true}"
             app:imageUrl="@{owner.avatarUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

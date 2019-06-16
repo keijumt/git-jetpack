@@ -22,6 +22,7 @@
             android:layout_width="@dimen/repo_thumbnail_size"
             android:layout_height="@dimen/repo_thumbnail_size"
             android:layout_marginTop="@dimen/spacing_12dp"
+            app:circleCrop="@{true}"
             app:imageUrl="@{repo.owner.avatarUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="2,1:1"

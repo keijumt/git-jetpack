@@ -10,17 +10,7 @@
         android:name="keijumt.gitjetpack.repo.ui.ReposFragment"
         android:label="Repository"
         tools:layout="@layout/fragment_repos" />
-
-    <fragment
-        android:id="@+id/repo"
-        android:name="keijumt.gitjetpack.repo.ui.RepoFragment"
-        android:label="repoFragment"
-        tools:layout="@layout/fragment_repo">
-        <argument
-            android:name="tabIndex"
-            app:argType="integer" />
-    </fragment>
-
+    
     <fragment
         android:id="@+id/developers"
         android:name="keijumt.gitjetpack.developer.ui.DevelopersFragment"
