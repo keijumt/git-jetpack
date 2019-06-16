@@ -1,11 +1,19 @@
 # git-jetpack
 This is a sample app for browsing github using jetpack.
 
+## QuickStart
+Write the github access token in `local.properties`.
+
+```
+api_token=xxxxxxxxxxxx
+```
+
 ## technology stack
 - [Kotlin](https://github.com/JetBrains/kotlin)
 - [Jetpack](https://developer.android.com/jetpack)
 - Modularization
 - SingleActivity
+- [DarkTheme](https://developer.android.com/preview/features/darktheme)
 - [MVVM](https://developer.android.com/jetpack/docs/guide)
 - [Kotlin Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
 - [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle)
@@ -13,9 +21,15 @@ This is a sample app for browsing github using jetpack.
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 - [DataBinding](https://developer.android.com/topic/libraries/data-binding)
 - [Navigation](https://developer.android.com/topic/libraries/architecture/navigation.html)
+- [MotionLayout](https://developer.android.com/reference/android/support/constraint/motion/MotionLayout)
 - [KTX](https://developer.android.com/kotlin/ktx.html)
 - [Dagger2](https://github.com/google/dagger)
 - [Retrofit](https://github.com/square/retrofit)
+
+## DarkTheme
+| Day | Night |
+----|---- 
+| <img src="art/day.png" width="320" /> | <img src="art/night.png" width="320" /> |
 
 ## Modularization
 <img src="art/modularization.png" width="400" />
