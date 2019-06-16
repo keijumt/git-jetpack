@@ -6,14 +6,21 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions
 
-@BindingAdapter("imageUrl")
-fun ImageView.imageUrl(url: String?) {
+@BindingAdapter("imageUrl", "circleCrop", requireAll = false)
+fun ImageView.imageUrl(url: String?, isCircleCrop: Boolean?) {
     url ?: return
 
     val uri = url.toUri()
-    Glide.with(this.context)
+    val builder = Glide.with(this.context)
         .asBitmap()
-        .load(uri)
+        .let {
+            if (isCircleCrop == true) {
+                it.circleCrop()
+            }
+            it
+        }
+
+    builder.load(uri)
         .transition(BitmapTransitionOptions.withCrossFade())
         .into(this)
 }

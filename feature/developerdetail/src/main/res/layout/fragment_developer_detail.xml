@@ -1,17 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.DeveloperDetailFragment">
 
-    <FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <data>
+
+        <variable
+            name="viewModel"
+            type="keijumt.gitjetpack.developerdetail.ui.DeveloperDetailViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.DeveloperDetailFragment">
+        android:layout_height="match_parent">
 
-        <TextView
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            android:elevation="4dp">
+
+            <keijumt.gitjetpack.component.widget.CollapsibleToolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="false"
+                android:minHeight="?attr/actionBarSize"
+                app:layoutDescription="@xml/motion_developer_detail"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:progress="0">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="0dp"
+                    android:layout_height="?attr/actionBarSize"
+                    app:navigationIcon="@drawable/abc_ic_ab_back_material"
+                    app:titleTextColor="?attr/colorOnSurface"
+                    tools:ignore="PrivateResource" />
+
+                <ImageView
+                    android:id="@+id/thumbnail"
+                    android:layout_width="@dimen/thumbnail_size"
+                    android:layout_height="@dimen/thumbnail_size"
+                    android:layout_marginTop="@dimen/spacing_32dp"
+                    app:circleCrop="@{true}"
+                    app:imageUrl="@{viewModel.user.avatarUrl}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toolbar"
+                    tools:background="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/user_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8dp"
+                    android:text="@{viewModel.user.userId}"
+                    android:textColor="@color/colorOnSurface"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name"
+                    tools:text="keijumt" />
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_16dp"
+                    android:text="@{viewModel.user.name}"
+                    android:textColor="@color/colorOnSurface"
+                    app:layout_constraintEnd_toEndOf="@id/thumbnail"
+                    app:layout_constraintStart_toStartOf="@id/thumbnail"
+                    app:layout_constraintTop_toBottomOf="@id/thumbnail"
+                    tools:text="Keiju Matsumoto" />
+
+                <TextView
+                    android:id="@+id/following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_12dp"
+                    android:layout_marginEnd="@dimen/spacing_8dp"
+                    android:paddingBottom="@dimen/spacing_16dp"
+                    android:text="@{@string/following(viewModel.user.following)}"
+                    android:textColor="@color/colorOnSurface"
+                    app:layout_constraintEnd_toEndOf="@id/guid_follow"
+                    app:layout_constraintTop_toBottomOf="@id/user_id"
+                    tools:text="following:1" />
+
+                <TextView
+                    android:id="@+id/followers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_8dp"
+                    android:layout_marginTop="@dimen/spacing_12dp"
+                    android:text="@{@string/followers(viewModel.user.followers)}"
+                    android:textColor="@color/colorOnSurface"
+                    app:layout_constraintStart_toStartOf="@id/guid_follow"
+                    app:layout_constraintTop_toBottomOf="@id/user_id"
+                    tools:text="followers:1" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guid_follow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:textColor="@color/colorOnSurface"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="thumbnail,name,user_id,following,followers"
+                    app:goneUnless="@{!viewModel.isVisibleProgress}" />
+
+            </keijumt.gitjetpack.component.widget.CollapsibleToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_repo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Hello" />
+            android:background="?android:attr/colorBackground"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    </FrameLayout>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:goneUnless="@{viewModel.isVisibleProgress}" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

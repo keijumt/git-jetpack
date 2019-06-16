@@ -11,7 +11,12 @@ enum class PageConfiguration(
     val hideBottomNavigation: Boolean = false
 ) {
 
-    DeveloperDetail(R.id.developerdetail, displayHomeAsUpEnabled = true, hideBottomNavigation = true),
+    DeveloperDetail(
+        R.id.developerdetail,
+        displayHomeAsUpEnabled = true,
+        hideToolbar = true,
+        hideBottomNavigation = true
+    ),
     OTHER(0);
 
     companion object {
