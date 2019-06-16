@@ -4,6 +4,6 @@ include ':app',
         ':data',
         ':model',
 
-        ':feature:feed',
+        ':feature:repo',
         ':feature:developer',
         ':feature:developerdetail'

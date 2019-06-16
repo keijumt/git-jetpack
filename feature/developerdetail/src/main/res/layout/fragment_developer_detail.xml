@@ -35,6 +35,7 @@
                     android:id="@+id/toolbar"
                     android:layout_width="0dp"
                     android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorSurface"
                     app:navigationIcon="@drawable/abc_ic_ab_back_material"
                     app:titleTextColor="?attr/colorOnSurface"
                     tools:ignore="PrivateResource" />

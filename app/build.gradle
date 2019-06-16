@@ -39,7 +39,7 @@ dependencies {
     implementation project(':coreandroid')
     implementation project(':component')
     implementation project(':data')
-    implementation project(':feature:feed')
+    implementation project(':feature:repo')
     implementation project(':feature:developer')
     implementation project(':feature:developerdetail')
 

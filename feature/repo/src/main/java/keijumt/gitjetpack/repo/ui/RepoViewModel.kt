@@ -1,4 +1,4 @@
-package keijumt.gitjetpack.feed.ui
+package keijumt.gitjetpack.repo.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class FeedViewModel @Inject constructor(
+class RepoViewModel @Inject constructor(
     private val repoRepository: RepoRepository
 ) : ViewModel() {
 

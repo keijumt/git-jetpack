@@ -1,4 +1,4 @@
-package keijumt.gitjetpack.feed.ui
+package keijumt.gitjetpack.repo.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,15 +8,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import dagger.android.support.DaggerFragment
-import keijumt.gitjetpacfk.feed.ui.FeedFragmentArgs
-import keijumt.gitjetpack.feed.databinding.FragmentFeedBinding
+import keijumt.gitjetpack.repo.databinding.FragmentRepoBinding
 import javax.inject.Inject
 
-class FeedFragment : DaggerFragment() {
+class RepoFragment : DaggerFragment() {
 
     companion object {
-        fun newInstance(args: FeedFragmentArgs): FeedFragment {
-            return FeedFragment().also {
+        fun newInstance(args: RepoFragmentArgs): RepoFragment {
+            return RepoFragment().also {
                 it.arguments = args.toBundle()
             }
         }
@@ -25,14 +24,14 @@ class FeedFragment : DaggerFragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    private lateinit var binding: FragmentFeedBinding
+    private lateinit var binding: FragmentRepoBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentFeedBinding.inflate(
+        binding = FragmentRepoBinding.inflate(
             inflater,
             container,
             false
@@ -44,17 +43,17 @@ class FeedFragment : DaggerFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val feedViewModel: FeedViewModel by viewModels { viewModelFactory }
-        binding.viewModel = feedViewModel
+        val repoViewModel: RepoViewModel by viewModels { viewModelFactory }
+        binding.viewModel = repoViewModel
 
-        val adapter = FeedAdapter()
-        binding.recyclerFeed.adapter = adapter
+        val adapter = RepoAdapter()
+        binding.recyclerRepo.adapter = adapter
 
-        val args = FeedFragmentArgs.fromBundle(requireNotNull(arguments))
+        val args = RepoFragmentArgs.fromBundle(requireNotNull(arguments))
         val tabIndex = args.tabIndex
         // TODO 言語のEnumとか定義しておいてtabIndexとEnum.ordinalを比較する
 
-        feedViewModel.repos.observe(viewLifecycleOwner) {
+        repoViewModel.repos.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
     }

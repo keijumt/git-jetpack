@@ -3,13 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.FeedFragment">
+    tools:context=".ui.RepoFragment">
 
     <data>
 
         <variable
             name="viewModel"
-            type="keijumt.gitjetpack.feed.ui.FeedViewModel" />
+            type="keijumt.gitjetpack.repo.ui.RepoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_feed"
+            android:id="@+id/recycler_repo"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="?android:attr/colorBackground"

@@ -1,4 +1,4 @@
-package keijumt.gitjetpack.feed
+package keijumt.gitjetpack.repo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

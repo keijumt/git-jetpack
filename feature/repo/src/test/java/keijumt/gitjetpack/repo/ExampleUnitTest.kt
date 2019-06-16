@@ -1,4 +1,4 @@
-package keijumt.gitjetpack.feed
+package keijumt.gitjetpack.repo
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

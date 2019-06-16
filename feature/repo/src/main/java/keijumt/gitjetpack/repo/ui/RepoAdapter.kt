@@ -1,30 +1,30 @@
-package keijumt.gitjetpack.feed.ui
+package keijumt.gitjetpack.repo.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import keijumt.gitjetpack.feed.databinding.ItemFeedBinding
 import keijumt.gitjetpack.model.Repo
+import keijumt.gitjetpack.repo.databinding.ItemRepoBinding
 
-class FeedAdapter : ListAdapter<Repo, FeedAdapter.FeedViewHolder>(RepoDiff) {
+class RepoAdapter : ListAdapter<Repo, RepoAdapter.RepoViewHolder>(RepoDiff) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
-        val binding = ItemFeedBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
+        val binding = ItemRepoBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return FeedViewHolder(binding)
+        return RepoViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RepoViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    class FeedViewHolder(
-        private val binding: ItemFeedBinding
+    class RepoViewHolder(
+        private val binding: ItemRepoBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(repo: Repo) {
             binding.repo = repo
