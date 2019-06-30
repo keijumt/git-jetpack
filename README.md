@@ -25,6 +25,9 @@ api_token=xxxxxxxxxxxx
 - [KTX](https://developer.android.com/kotlin/ktx.html)
 - [Dagger2](https://github.com/google/dagger)
 - [Retrofit](https://github.com/square/retrofit)
+- [Mockk](https://github.com/mockk/mockk)
+- [KotlinTest](https://github.com/kotlintest/kotlintest)
+- [AndroidJunit5](https://github.com/mannodermaus/android-junit5)
 
 ## DarkTheme
 | Day | Night |
