@@ -35,8 +35,9 @@ class ReposViewModelSpec : ShouldSpec() {
     init {
         "loadRepo" {
             "repository successfully returns" {
-                val repoRepository = mockk<RepoRepository>()
-                coEvery { repoRepository.searchByRepoName(any()) } returns Result.Success(emptyList())
+                val repoRepository = mockk<RepoRepository> {
+                    coEvery { searchByRepoName(any()) } returns Result.Success(emptyList())
+                }
                 val viewModel = ReposViewModel(repoRepository)
                 val reposObserver = mockk<Observer<List<Repo>>>(relaxed = true)
                 val visibleProgressObserver = mockk<Observer<Boolean>>(relaxed = true)
@@ -63,8 +64,9 @@ class ReposViewModelSpec : ShouldSpec() {
                 }
             }
             "repository returns an error" {
-                val repoRepository = mockk<RepoRepository>()
-                coEvery { repoRepository.searchByRepoName(any()) } returns Result.Error(Exception())
+                val repoRepository = mockk<RepoRepository> {
+                    coEvery { searchByRepoName(any()) } returns Result.Error(Exception())
+                }
                 val viewModel = ReposViewModel(repoRepository)
                 val reposObserver = mockk<Observer<List<Repo>>>(relaxed = true)
                 val visibleProgressObserver = mockk<Observer<Boolean>>(relaxed = true)
