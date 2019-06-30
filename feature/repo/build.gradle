@@ -1,6 +1,8 @@
 apply from: rootProject.file('android.gradle')
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
+apply plugin: "de.mannodermaus.android-junit5"
+
 android.dataBinding.enabled = true
 
 dependencies {
@@ -12,6 +14,9 @@ dependencies {
     implementation project(':model')
 
     testImplementation dep.test.junit
+    testImplementation dep.test.kotlinTest
+    testImplementation dep.test.coroutines
+    testImplementation dep.test.mockK
     androidTestImplementation dep.test.testRunner
     androidTestImplementation dep.test.espressoCore
 
@@ -21,6 +26,9 @@ dependencies {
     implementation dep.androidX.lifecycle.extensions
     implementation dep.androidX.lifecycle.livedata
     implementation dep.androidX.lifecycle.viewmodel
+
+    implementation dep.kotlin.coroutinesCore
+    implementation dep.kotlin.coroutinesAndroid
 
     implementation dep.androidX.ktx.core
     implementation dep.androidX.ktx.fragment

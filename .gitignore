@@ -57,4 +57,7 @@ lint/tmp/
 gen-external-apklibs
 output.json
 
+# KotlinTest
+.kotlintest
+
 # End of https://www.gitignore.io/api/android

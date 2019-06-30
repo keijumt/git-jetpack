@@ -5,6 +5,7 @@ ext {
     recyclerViewVersion = "1.0.0"
     constraintVersion = '2.0.0-beta1'
     materialVersion = "1.1.0-alpha07"
+    coroutinesVersion = "1.2.2"
     lifecycleVersion = "2.2.0-alpha01"
     ktxVersion = '1.1.0-alpha05'
     livedataKtxVersion = "2.1.0-alpha04"
@@ -16,17 +17,23 @@ ext {
     junitVersion = '4.12'
     testRunnerVersion = '1.1.1'
     espressoVersion = '3.1.1'
+    junit5Version = '1.4.2.1'
+    mockkVersion = "1.9.3"
+    kotlinTestRunnerJunit = "3.3.2"
 }
 
 ext.dep = [
         plugin    : [
                 android : "com.android.tools.build:gradle:$buildGradleVersion",
                 kotlin  : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion",
-                safeArgs: "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+                safeArgs: "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion",
+                "junit5": "de.mannodermaus.gradle.plugins:android-junit5:$junit5Version"
         ],
 
         kotlin    : [
-                core: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+                core             : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+                coroutinesCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
+                coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
         ],
 
         androidX  : [
@@ -49,10 +56,13 @@ ext.dep = [
                 junit       : "junit:junit:$junitVersion",
                 testRunner  : "androidx.test:runner:$testRunnerVersion",
                 espressoCore: "androidx.test.espresso:espresso-core:$espressoVersion",
+                mockK       : "io.mockk:mockk:$mockkVersion",
+                kotlinTest  : "io.kotlintest:kotlintest-runner-junit5:$kotlinTestRunnerJunit",
+                coroutines  : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
         ],
 
         navigation: [
-                fragment   : "androidx.navigation:navigation-fragment:$navigationVersion",
+                fragment   : "androidx.navigation:navigation-fragment:f$navigationVersion",
                 ui         : "androidx.navigation:navigation-ui:$navigationVersion",
                 fragmentKtx: "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
                 uiKtx      : "androidx.navigation:navigation-ui-ktx:$navigationVersion"
